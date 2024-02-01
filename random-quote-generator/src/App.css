@@ -48,6 +48,7 @@ body {
   font-size: 36px;
   font-weight: 500;
   line-height: 50px;
+  height: 200px;
   color: var(--primary-text-color);
 }
 
