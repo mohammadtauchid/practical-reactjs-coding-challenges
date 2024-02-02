@@ -6,13 +6,24 @@ interface InputProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   name: string
   value: string
+  autoFocus?: boolean
 }
 
-const Input = ({ label, placeholder, onChange, name, value }: InputProps) => {
+const Input = ({ 
+  label, placeholder, onChange, name, value, autoFocus 
+}: InputProps) => {
   return (
     <div className="input">
-      <label htmlFor="">{label}</label>
-      <input type="text" placeholder={placeholder} onChange={onChange} name={name} value={value} />
+      <label htmlFor={label}>{label}</label>
+      <input 
+        id={label} 
+        type="text" 
+        placeholder={placeholder} 
+        onChange={onChange} 
+        name={name} 
+        value={value} 
+        autoFocus={autoFocus} 
+      />
     </div>
   )
 }

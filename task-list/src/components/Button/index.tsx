@@ -7,12 +7,16 @@ type ButtonProps = {
   icon?: ReactNode
   outline?: boolean
   disabled?: boolean
-  onClick: MouseEventHandler<HTMLButtonElement>
+  onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
 const Button = ({ title, icon, outline, disabled, onClick }: ButtonProps) => {
   return (
-    <button className={classnames(outline && "outline", "button")} onClick={onClick} disabled={disabled}>
+    <button 
+      className={classnames(outline && "outline", "button")} 
+      onClick={onClick}
+      disabled={disabled}
+    >
       {icon && <span className="icon">{icon}</span>}
       {title}
     </button>
